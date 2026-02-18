@@ -1,26 +1,50 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
-<form action="post">
+<form method="post" id="loginForm">
     <div class="container">
-<div class="mb-3">
-    <label for="usuario" class="form-label">Usuario:</label>
-    <input type="text" class="form-control" id="usuario" >
-</div>
 
+        <div class="mb-3">
+            <label for="usuario" class="form-label">Usuario:</label>
+            <input type="text" class="form-control" id="usuario">
+        </div>
 
-<div>
-    <p id="mensaje" class="text-success"></p>
-</div>
+        <div>
+            <p id="mensaje" class="text-success"></p>
+        </div>
 
-<div>
-    <label for="password" class="form-label">Contraseña</label>
-    <input type="password" class="form-control" id="password">
-</div>
-<div>
-  <p id="requisito"></p>
-</div>
-            <button> Enviar</button>
+        <div>
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="password">
+        </div>
+
+        <div>
+            <p id="requisito"></p>
+        </div>
+
+        <!-- Barra de fortaleza (solo HTML estructural, sin CSS propio) -->
+        <div class="mb-2">
+            <div class="d-flex gap-1 mb-1">
+                <div id="seg1" style="height:6px; flex:1; border-radius:3px; background:#dee2e6; transition:background 0.3s;"></div>
+                <div id="seg2" style="height:6px; flex:1; border-radius:3px; background:#dee2e6; transition:background 0.3s;"></div>
+                <div id="seg3" style="height:6px; flex:1; border-radius:3px; background:#dee2e6; transition:background 0.3s;"></div>
+                <div id="seg4" style="height:6px; flex:1; border-radius:3px; background:#dee2e6; transition:background 0.3s;"></div>
+            </div>
+            <small id="fortalezaLabel" class="text-muted"></small>
+        </div>
+
+        <!-- Intentos -->
+        <div class="mb-2">
+            <small id="intentosMsg">Intentos fallidos: 0 / 3</small>
+        </div>
+
+        <!-- Alerta de bloqueo -->
+        <div id="bloqueoMsg" class="alert alert-danger d-none" role="alert">
+            🔒 Formulario bloqueado. Espera <strong id="contador">30</strong> segundos.
+        </div>
+
+        <button id="btnEnviar">Enviar</button>
+
     </div>
 </form>
 <script src="validacion.js"></script>
