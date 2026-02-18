@@ -19,7 +19,7 @@ usuario.addEventListener("input", function(evento){
     //verificacion caracteres
     if (this.value.length < 3) {
         this.style.borderColor = "red"
-        mensaje.textContent = "El usuario tiene menos o igual a 3 caracteres"
+        mensaje.textContent = "El usuario tiene menos de 3 caracteres"
         mensaje.classList.add('text-danger')
     }
 
@@ -37,7 +37,7 @@ let requisito = document.getElementById("requisito")
         requisito.classList.add('text-danger')
     }else{
         this.style.borderColor = "green"
-        requisito.textContent = "la contraseña es valida"
+        requisito.textContent = "La contraseña es valida"
         requisito.classList.add('text-success')
     }
     })
